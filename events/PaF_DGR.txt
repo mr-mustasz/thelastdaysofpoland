@@ -143,6 +143,16 @@ country_event = {
 		#}
 		set_country_flag = DGR_district_wars_on
 		}
+		hidden_effect = { 
+			DGA = { add_ideas = DGR_district_wars_other }
+			ADM = { add_ideas = DGR_district_wars_other }
+			DAR = { add_ideas = DGR_district_wars_other }
+			FAR = { add_ideas = DGR_district_wars_other }
+			HUT = { add_ideas = DGR_district_wars_other }
+			STG = { add_ideas = DGR_district_wars_other }
+			STM = { add_ideas = DGR_district_wars_other }
+			SWK = { add_ideas = DGR_district_wars_other }
+		}
 		log = "[GetDateText]: DGR_district_wars"
 	}
 }
@@ -194,10 +204,19 @@ country_event = {
 		clr_country_flag = DGR_district_wars_on
 		if = {
 			limit = {
-				country_exists = DGA
+				any_country = {
+					has_idea = DGR_district_wars_other
+				}
 			}
-			annex_country = {
-				target = DGA
+			every_country = {
+				limit = {
+					has_idea = DGR_district_wars_other
+				}
+				PREV = {
+				 	annex_country = {
+				 		target = PREV
+				 	}
+				}
 			}
 		}
 	}
@@ -1290,6 +1309,15 @@ country_event = {
 				character = DGR_karon
 				value = no
 			}		
+			if = {
+				limit = {
+					has_idea = DGR_fabrykapelnazycia_moczar2
+				}
+				swap_ideas = {
+					remove_idea = DGR_fabrykapelnazycia_moczar2
+					add_idea = DGR_fabrykapelnazycia_gierek2
+				}
+			}
 		}
 		else_if = {
 			limit = {
@@ -1369,6 +1397,15 @@ country_event = {
 			    character = DGR_bargiela
 			    civilian = { small ="GFX_DGR_Bargiela2_min" }
 			}				
+			if = {
+				limit = {
+					has_idea = DGR_fabrykapelnazycia_gierek2
+				}
+				swap_ideas = {
+					remove_idea = DGR_fabrykapelnazycia_gierek2
+					add_idea = DGR_fabrykapelnazycia_moczar2
+				}
+			}
 		}		
 	}
 }
@@ -1998,6 +2035,22 @@ country_event = {
 
 	option = {
 		name = dgr_nazbol.17.a
+		country_event = dgr_nazbol.170
+	}
+}
+
+country_event = {
+	id = dgr_nazbol.170 #intelligence committee
+	title = dgr_nazbol.17.t
+	desc = dgr_nazbol.170.desc
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	immediate = { log = "[GetDateText]: [ROOT.GetName] fires dgr_nazbol.170"}
+
+	option = {
+		name = dgr_nazbol.170.a
 	}
 }
 
@@ -2062,21 +2115,6 @@ country_event = {
 }
 
 country_event = {
-	id = dgr_nazbol.22 #genome lab
-	title = dgr_nazbol.22.t
-	desc = dgr_nazbol.22.desc
-
-	fire_only_once = yes
-	is_triggered_only = yes
-
-	immediate = { log = "[GetDateText]: [ROOT.GetName] fires dgr_nazbol.22"}
-
-	option = {
-		name = dgr_nazbol.22.a
-	}
-}
-
-country_event = {
 	id = dgr_nazbol.23 #military moloch
 	title = dgr_nazbol.23.t
 	desc = dgr_nazbol.23.desc
@@ -2122,21 +2160,6 @@ country_event = {
 }
 
 country_event = {
-	id = dgr_nazbol.26 #strategic destruction command
-	title = dgr_nazbol.26.t
-	desc = dgr_nazbol.26.desc
-
-	fire_only_once = yes
-	is_triggered_only = yes
-
-	immediate = { log = "[GetDateText]: [ROOT.GetName] fires dgr_nazbol.26"}
-
-	option = {
-		name = dgr_nazbol.26.a
-	}
-}
-
-country_event = {
 	id = dgr_nazbol.27 #unleashing fire and fury
 	title = dgr_nazbol.27.t
 	desc = dgr_nazbol.27.desc
@@ -2167,21 +2190,6 @@ country_event = {
 }
 
 country_event = {
-	id = dgr_nazbol.29 #red guardians
-	title = dgr_nazbol.29.t
-	desc = dgr_nazbol.29.desc
-
-	fire_only_once = yes
-	is_triggered_only = yes
-
-	immediate = { log = "[GetDateText]: [ROOT.GetName] fires dgr_nazbol.29"}
-
-	option = {
-		name = dgr_nazbol.29.a
-	}
-}
-
-country_event = {
 	id = dgr_nazbol.30 #red scare over poland
 	title = dgr_nazbol.30.t
 	desc = dgr_nazbol.30.desc
@@ -2208,8 +2216,25 @@ country_event = {
 
 	option = {
 		name = dgr_nazbol.31.a
+		country_event = dgr_nazbol.311
 	}
 }
+
+country_event = {
+	id = dgr_nazbol.311 #illusion of bolshevism
+	title = dgr_nazbol.311.t
+	desc = dgr_nazbol.311.desc
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	immediate = { log = "[GetDateText]: [ROOT.GetName] fires dgr_nazbol.31"}
+
+	option = {
+		name = dgr_nazbol.311.a
+	}
+}
+
 
 country_event = {
 	id = dgr_nazbol.32 #dzien sierpa
@@ -2845,21 +2870,6 @@ country_event = {
 }
 
 country_event = {
-	id = dgr_narkom.10 #princicples of narkom
-	title = dgr_narkom.10.t
-	desc = dgr_narkom.10.desc
-
-	fire_only_once = yes
-	is_triggered_only = yes
-
-	immediate = { log = "[GetDateText]: [ROOT.GetName] fires dgr_narkom.10"}
-
-	option = {
-		name = dgr_narkom.10.a
-	}
-}
-
-country_event = {
 	id = dgr_narkom.11 #appeal of the twenty
 	title = dgr_narkom.11.t
 	desc = dgr_narkom.11.desc
@@ -2886,21 +2896,6 @@ country_event = {
 
 	option = {
 		name = dgr_narkom.12.a
-	}
-}
-
-country_event = {
-	id = dgr_narkom.13 #people's medical center
-	title = dgr_narkom.13.t
-	desc = dgr_narkom.13.desc
-
-	fire_only_once = yes
-	is_triggered_only = yes
-
-	immediate = { log = "[GetDateText]: [ROOT.GetName] fires dgr_narkom.13"}
-
-	option = {
-		name = dgr_narkom.13.a
 	}
 }
 
@@ -3033,20 +3028,20 @@ country_event = {
 	}
 }
 
-country_event = {
-	id = dgr_narkom.22 #little thaw
-	title = dgr_narkom.22.t
-	desc = dgr_narkom.22.desc
-
-	fire_only_once = yes
-	is_triggered_only = yes
-
-	immediate = { log = "[GetDateText]: [ROOT.GetName] fires dgr_narkom.22"}
-
-	option = {
-		name = dgr_narkom.22.a
-	}
-}
+#country_event = {
+#	id = dgr_narkom.22 #little thaw
+#	title = dgr_narkom.22.t
+#	desc = dgr_narkom.22.desc
+#
+#	fire_only_once = yes
+#	is_triggered_only = yes
+#
+#	immediate = { log = "[GetDateText]: [ROOT.GetName] fires dgr_narkom.22"}
+#
+#	option = {
+#		name = dgr_narkom.22.a
+#	}
+#}
 
 country_event = {
 	id = dgr_narkom.23 #extraordinary session
@@ -3269,41 +3264,6 @@ country_event = {
 
 	option = {
 		name = dgr_narkom.31.a
-		add_country_leader_role = {
-			character = DGR_karon
-			promote_leader = yes 
-			country_leader = {
-				ideology = marxism_cranism_subtype
-				traits = { ideological_groupie }
-
-			}
-		}
-		WDW = {
-			WDW_michał_nowicki = {
-				set_nationality = DGR
-			}
-		}
-		remove_country_leader_role = {
-			character = WDW_michał_nowicki
-			ideology = marxism_cranism_maoism_subtype
-		}
-		add_advisor_role = {
-			character = WDW_michał_nowicki
-			advisor = {
-				slot = head_of_government
-				cost = 100
-				idea_token = WDW_min_michał_nowicki
-				traits = {
-					veteran_communist
-				}
-				can_be_fired = no
-			}
-			activate = yes
-		}
-		set_can_be_fired_in_advisor_role = {
-			character = WDW_michał_nowicki
-			value = no
-		}
 	}
 }
 
@@ -3354,5 +3314,25 @@ country_event = {
 			character = NRA_ludmiła_dobrzyniecka
 			value = no
 		}
+	}
+}
+
+country_event = {
+	id = dgr_narkom.1000 #GUI Integrity spada
+	title = dgr_narkom.1000.t
+	desc = dgr_narkom.1000.desc
+
+
+	immediate = { log = "[GetDateText]: [ROOT.GetName] fires dgr_narkom.1000"}
+
+	is_triggered_only = yes
+
+	option = {
+		name = dgr_narkom.1000.a
+		add_to_variable = {
+			DGR_nat_integrity = -1
+		}
+		DGR_refresh_bop = yes
+		custom_effect_tooltip = nat_integrity_level_down
 	}
 }

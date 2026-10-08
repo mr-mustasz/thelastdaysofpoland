@@ -54,12 +54,7 @@ ideas = {
 					has_country_flag = DGR_OP_victory
 					has_country_flag = DGR_OM_victory					
 				}
-			}
-
-			on_remove = {
-				DGR = {
-					country_event = dgr_district.5
-				}
+				has_completed_focus = DGR_restore_palace_of_culture
 			}
 
 			removal_cost = -1
@@ -71,6 +66,72 @@ ideas = {
 				custom_modifier_tooltip = district_wars_army_tt
 			}
 		}
+
+		DGR_district_wars_up = {
+			allowed = {
+				original_tag = DGR
+			}
+			name = DGR_district_wars
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			cancel = {
+				AND = {
+					has_country_flag = DGR_OW_victory
+					has_country_flag = DGR_AW_victory
+					has_country_flag = DGR_AS_victory
+					has_country_flag = DGR_OA_victory
+					has_country_flag = DGR_AH_victory
+					has_country_flag = DGR_OL_victory
+					has_country_flag = DGR_OB_victory
+					has_country_flag = DGR_OZ_victory
+					has_country_flag = DGR_OP_victory
+					has_country_flag = DGR_OM_victory					
+				}
+			}
+
+			on_remove = {
+				DGR = {
+					country_event = dgr_district.5
+				}
+			}
+
+			removal_cost = -1
+			picture = DGR_district_wars
+			modifier = {
+				stability_factor = -0.1
+				consumer_goods_factor = 0.2
+			}
+			targeted_modifier = {
+				tag = DGA
+				attack_bonus_against = 0.25
+			}
+			targeted_modifier = { 
+				tag = ADM
+				attack_bonus_against = 0.25
+			}
+			targeted_modifier = { 
+				tag = DAR
+				attack_bonus_against = 0.25
+			}
+			targeted_modifier = { 
+				tag = HUT
+				attack_bonus_against = 0.25
+			}
+			targeted_modifier = { 
+				tag = STG
+				attack_bonus_against = 0.25
+			}
+			targeted_modifier = { 
+				tag = STM
+				attack_bonus_against = 0.25
+			}
+			targeted_modifier = { 
+				tag = SWK
+				attack_bonus_against = 0.25
+			}		
+		}		
 
 		DGR_district_wars_other = {
 			allowed = {
@@ -330,14 +391,14 @@ ideas = {
 			}
 
 			removal_cost = -1
-			picture = idea_unknown
+			picture = DGR_foreign_tech_espionage_spirit
 			research_bonus = {
 				electronics = 0.10
-				}
+			}
 			modifier = {
-			research_sharing_per_country_bonus_factor = 0.10
-			operation_steal_tech_outcome = 0.05
-			operation_steal_tech_risk = -0.05
+				research_sharing_per_country_bonus_factor = 0.10
+				operation_steal_tech_outcome = 0.15
+				operation_steal_tech_risk = -0.15
 			}
 		}
 
@@ -531,12 +592,12 @@ ideas = {
 			}
 
 			removal_cost = -1
-			picture = ATM_overextended_army
+			picture = DGR_narodowa_armia_ludowa0
 			modifier = {
-				army_org_factor = -0.5
-				army_morale_factor = -0.5
-				army_defence_factor = -0.5
-				land_doctrine_cost_factor = 0.5
+				army_org_factor = -0.3
+				army_morale_factor = -0.3
+				army_defence_factor = -0.2
+				land_doctrine_cost_factor = 0.3
 			}
 		}		
 		
@@ -608,7 +669,7 @@ ideas = {
 			}
 
 			removal_cost = -1
-			picture = DGR_narodowa_armia_ludowa3
+			picture = DGR_narodowa_armia_ludowa4
 			modifier = {
 				army_org_factor = 0.05
 				army_morale_factor = 0.05
@@ -627,7 +688,7 @@ ideas = {
 			}
 
 			removal_cost = -1
-			picture = DGR_narodowa_armia_ludowa3
+			picture = DGR_narodowa_armia_ludowa5
 			name = DGR_narodowa_armia_ludowa4
 			modifier = {
 				army_org_factor = 0.05
@@ -647,7 +708,7 @@ ideas = {
 			}
 
 			removal_cost = -1
-			picture = DGR_narodowa_armia_ludowa3
+			picture = DGR_narodowa_armia_ludowa6
 			name = DGR_narodowa_armia_ludowa4
 			modifier = {
 				army_org_factor = 0.05
@@ -668,7 +729,7 @@ ideas = {
 			}
 
 			removal_cost = -1
-			picture = DGR_narodowa_armia_ludowa3
+			picture = DGR_narodowa_armia_ludowa6
 			name = DGR_narodowa_armia_ludowa4
 			modifier = {
 				army_org_factor = 0.1
@@ -690,7 +751,7 @@ ideas = {
 			}
 
 			removal_cost = -1
-			picture = DGR_narodowa_armia_ludowa3
+			picture = DGR_narodowa_armia_ludowa6
 			name = DGR_narodowa_armia_ludowa4
 			modifier = {
 				army_org_factor = 0.1
@@ -712,7 +773,7 @@ ideas = {
 			}
 
 			removal_cost = -1
-			picture = DGR_narodowa_armia_ludowa3
+			picture = DGR_narodowa_armia_ludowa6
 			name = DGR_narodowa_armia_ludowa4
 			modifier = {
 				army_org_factor = 0.1
@@ -735,7 +796,7 @@ ideas = {
 			}
 
 			removal_cost = -1
-			picture = DGR_narodowa_armia_ludowa3
+			picture = DGR_narodowa_armia_ludowa_reformed
 			name = DGR_narodowa_armia_ludowa_reformed
 			modifier = {
 				army_org_factor = 0.15
@@ -754,7 +815,7 @@ ideas = {
 			}
 
 			removal_cost = -1
-			picture = DGR_narodowa_armia_ludowa3
+			picture = DGR_narodowa_armia_ludowa_reformed
 			name = DGR_narodowa_armia_ludowa_reformed
 			modifier = {
 				army_org_factor = 0.15
@@ -774,7 +835,7 @@ ideas = {
 			}
 
 			removal_cost = -1
-			picture = DGR_narodowa_armia_ludowa3
+			picture = DGR_narodowa_armia_ludowa_reformed
 			name = DGR_narodowa_armia_ludowa_reformed
 			modifier = {
 				army_org_factor = 0.2
@@ -795,7 +856,7 @@ ideas = {
 			}
 
 			removal_cost = -1
-			picture = DGR_narodowa_armia_ludowa3
+			picture = DGR_narodowa_armia_ludowa_reformed
 			name = DGR_narodowa_armia_ludowa_reformed
 			modifier = {
 				army_org_factor = 0.2
@@ -858,7 +919,7 @@ ideas = {
 			}
 
 			removal_cost = -1
-			picture = SKJ_money
+			picture = DGR_cut_luxury_sector_idea
 			modifier = {
 				consumer_goods_factor = -0.1
 				stability_factor = -0.025
@@ -890,7 +951,7 @@ ideas = {
 			}
 
 			removal_cost = -1
-			picture = SKJ_money
+			picture = DGR_freeze_civilian_infrastructure_idea
 			modifier = {
 				stability_factor = -0.025
 				production_cost_infrastructure_factor = 1
@@ -1107,7 +1168,7 @@ ideas = {
 			modifier = {
 				production_speed_infrastructure_factor = 0.1
 				production_cost_infrastructure_factor = -0.05
-				stability_factor = 0.025
+				foreign_subversive_activites = -0.05
 			}
 		}		
 		
@@ -1168,7 +1229,7 @@ ideas = {
 			}
 
 			removal_cost = -1
-			picture = DGR_collectivisation_stage_1
+			picture = DGR_collectivisation_stage_3
 			modifier = {
 				conscription = -0.02
 				consumer_goods_factor = -0.1
@@ -1189,7 +1250,7 @@ ideas = {
 			}
 
 			removal_cost = -1
-			picture = DGR_collectivisation_stage_1
+			picture = DGR_collectivisation_stage_4
 			modifier = {
 				conscription = -0.025
 				consumer_goods_factor = -0.05
@@ -1210,7 +1271,7 @@ ideas = {
 			}
 
 			removal_cost = -1
-			picture = DGR_collectivisation_stage_1
+			picture = DGR_collectivisation_stage_5
 			modifier = {
 				monthly_population = 0.05
 				conscription = -0.005
@@ -1231,7 +1292,7 @@ ideas = {
 			}
 
 			removal_cost = -1
-			picture = DGR_collectivisation_stage_1
+			picture = DGR_collectivisation_stage_5
 			modifier = {
 				monthly_population = 0.05
 				conscription = -0.005
@@ -1384,7 +1445,7 @@ ideas = {
 				always = yes
 			}
 			removal_cost = -1
-			picture = DGR_fabrykapelnazycia_gierek #todo
+			picture = DGR_economy_nda
 			modifier = {
 				cic_construction_boost_factor = 0.1
 				supply_node_range = 0.05
@@ -1423,6 +1484,7 @@ ideas = {
 
 		DGR_national_science_narkom_2 = {
 			picture = DGR_national_science
+			name = DGR_national_science
 			allowed = {
 				original_tag = DGR
 			}
@@ -1437,6 +1499,7 @@ ideas = {
 		}	
 		DGR_national_science_narkom_3 = {
 			picture = DGR_national_science
+			name = DGR_national_science
 			allowed = {
 				original_tag = DGR
 			}
@@ -1454,6 +1517,7 @@ ideas = {
 		
 		DGR_national_science2 = {
 			picture = DGR_national_science
+			name = DGR_national_science
 			allowed = {
 				original_tag = DGR
 			}
@@ -1470,7 +1534,7 @@ ideas = {
 
 		DGR_national_science3 = {
 			picture = DGR_national_science
-			name = DGR_national_science2
+			name = DGR_national_science
 			allowed = {
 				original_tag = DGR
 			}
@@ -1503,7 +1567,7 @@ ideas = {
 			}
 		}
 
-		DGR_economic_maneuver = {
+		DGR_economic_maneuver_idea = {
 			picture = CHO_industrial_transformation
 			allowed = {
 				original_tag = DGR
@@ -1521,6 +1585,7 @@ ideas = {
 
 		DGR_economic_maneuver_narkom_2 = {
 			picture = CHO_industrial_transformation
+			name = DGR_economic_maneuver_idea
 			allowed = {
 				original_tag = DGR
 			}
@@ -1538,6 +1603,7 @@ ideas = {
 
 		DGR_economic_maneuver_narkom_3 = {
 			picture = CHO_industrial_transformation
+			name = DGR_economic_maneuver_idea
 			allowed = {
 				original_tag = DGR
 			}
